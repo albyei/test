@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DraggableCard from '../components/DraggableCard';
+---
+
+<Layout title="Personal Archive | Portofolio">
+    <header class="max-w-6xl mx-auto mb-12 border-b border-black pb-4">
+        <div class="flex justify-between items-end">
+            <div>
+                <h1 class="text-xl font-bold tracking-tighter uppercase">Digital Archive / 2026</h1>
+                <h2 class="text-lg font-normal text-gray-600">Albi Ariza Syafiq</h2>
+            </div>
+            <p class="text-xs text-gray-500 font-mono">Last updated: Jan 2026</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(180px, auto)]">
+        
+        {/* Bio Block - Main Identity */}
+        <div class="md:col-span-2 md:row-span-2 h-full relative z-10">
+            <DraggableCard client:load className="bg-white border border-gray-300 p-6 flex flex-col justify-between group hover:border-black transition-colors shadow-sm h-full w-full">
+                <div>
+                    <span class="text-[10px] font-bold uppercase border border-black px-2 py-0.5 mb-4 inline-block tracking-wider">IDENTITY_01</span>
+                    <h2 class="text-2xl md:text-3xl font-bold leading-tight mt-2">
+                        Halo, saya Albi.
+                        <span class="text-gray-500 block text-lg md:text-xl mt-2 font-normal">Pengembang yang berfokus pada struktur, logika, dan efisiensi kode.</span>
+                    </h2>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-100">
+                    <p class="text-sm text-gray-600">Membangun antarmuka digital dengan pendekatan sistematis. Saat ini sedang mendalami ekosistem web modern.</p>
+                </div>
+            </DraggableCard>
+        </div>
+
+        {/* Status Log */}
+        <div class="h-full relative z-10">
+            <DraggableCard client:load className="bg-white border border-gray-300 p-6 hover:border-black transition-colors shadow-sm h-full w-full">
+                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-3 tracking-wider">LOG_ENTRY_2026</span>
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <p class="text-sm font-medium">Aktif membangun</p>
+                </div>
+                <div class="space-y-2 text-xs text-gray-600 font-mono">
+                    <p>🛠 Stack: JS, Astro, Tailwind</p>
+                    <p>🔖 Focus: Version Control</p>
+                    <p>📍 Current: GitHub Archiving</p>
+                </div>
+            </DraggableCard>
+        </div>
+
+        {/* Connect */}
+        <div class="h-full relative z-10">
+            <DraggableCard client:load className="bg-white border border-gray-300 p-6 hover:border-black transition-colors shadow-sm h-full w-full flex flex-col">
+                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-3 tracking-wider">Connect</span>
+                <ul class="text-sm space-y-3 flex-1">
+                    <li>
+                        <a href="#" class="flex items-center justify-between group hover:text-blue-600 transition-colors">
+                            <span>Twitter/X</span>
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-between group hover:text-blue-600 transition-colors">
+                            <span>GitHub</span>
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-between group hover:text-blue-600 transition-colors">
+                            <span>Read.cv</span>
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                        </a>
+                    </li>
+                </ul>
+            </DraggableCard>
+        </div>
+
+        {/* Selected Work 01 */}
+        <div class="md:col-span-2 h-full relative z-10">
+            <DraggableCard client:load className="bg-[#ffffea] border border-gray-300 p-6 hover:border-black transition-colors shadow-sm h-full w-full flex flex-col justify-between">
+                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-2 tracking-wider">ARCHIVE_FILE_01</span>
+                <div>
+                    <h3 class="text-xl font-bold underline decoration-1 underline-offset-4 decoration-gray-400">Git & GitHub Foundations</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                         <span class="px-2 py-0.5 bg-black text-white text-[10px] uppercase">Dicoding Academy</span>
+                         <span class="text-[10px] text-gray-500">Jan 2025</span>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-600 mt-4 leading-relaxed max-w-md">Dokumentasi penguasaan fundamental manajemen kode, kolaborasi tim, dan alur kerja Git standar industri.</p>
+            </DraggableCard>
+        </div>
+
+        {/* Selected Work 02 */}
+        <div class="h-full relative z-10">
+            <DraggableCard client:load className="bg-white border border-gray-300 p-6 hover:border-black transition-colors shadow-sm h-full w-full">
+                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-2 tracking-wider">ARCHIVE_FILE_02</span>
+                <h3 class="text-lg font-bold">Anti-Gravity UI</h3>
+                <p class="text-[10px] text-gray-500 mt-1 uppercase">Creative Coding / Matter.js</p>
+                <p class="text-xs text-gray-600 mt-3">Eksperimen antarmuka berbasis fisika yang menantang struktur grid tradisional.</p>
+            </DraggableCard>
+        </div>
+
+         {/* Thoughts */}
+        <div class="md:col-span-1 h-full relative z-10">
+            <DraggableCard client:load className="bg-white border border-gray-300 p-6 hover:border-black transition-colors shadow-sm h-full w-full flex flex-col justify-between">
+                <span class="text-[10px] font-bold uppercase text-gray-400 block mb-2 tracking-wider">DATA_POINT</span>
+                <blockquote class="text-xs italic leading-relaxed border-l-2 border-gray-200 pl-3 my-2">
+                    "Kode yang baik bukan hanya tentang menjalankan fungsi, tapi tentang bagaimana ia bisa dibaca dan dikelola di masa depan."
+                </blockquote>
+                <div class="text-[10px] text-gray-400 mt-2 text-right">Published: 12.01.2026</div>
+            </DraggableCard>
+        </div>
+
+    </main>
+
+    <footer class="max-w-6xl mx-auto mt-20 pb-12 text-[10px] uppercase tracking-widest text-gray-400 flex justify-between items-center border-t border-gray-200 pt-6">
+        <span>&copy; 2026 Albi Ariza Syafiq</span>
+        <span>Built with Astro & Tailwind</span>
+    </footer>
+</Layout>
