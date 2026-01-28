@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Reveal } from '../components/ui/Reveal';
+
+---
+
+<Layout title="404 — Page Not Found | Albi Ariza Syafiq" description="Page not found.">
+  <main class="flex items-center justify-center min-h-screen px-6 md:px-8">
+    <div class="max-w-md w-full text-center space-y-8">
+      
+      <div class="space-y-4">
+        <Reveal client:load delay={0.1}>
+            <div class="flex flex-col items-center">
+                <span class="font-mono text-sm font-medium text-accent tracking-widest uppercase mb-4">Error 404</span>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-text-primary">
+                Page Not Found
+                </h1>
+                <div class="h-0.5 w-16 bg-accent mt-6"></div>
+            </div>
+        </Reveal>
+        
+        <Reveal client:load delay={0.2}>
+          <p class="text-base text-text-muted leading-relaxed max-w-sm mx-auto mt-6">
+            The page you are looking for does not exist or has been moved. 
+          </p>
+        </Reveal>
+      </div>
+
+      <Reveal client:load delay={0.3}>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <a 
+            href="/" 
+            class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-deep-blue bg-accent rounded hover:bg-white transition-colors duration-300 shadow-lg shadow-blue-900/10 min-w-[140px]"
+          >
+            Back to Home
+          </a>
+          <a 
+            href="/#projects" 
+            class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-text-primary border border-border-subtle rounded hover:border-text-primary hover:bg-white/5 transition-all duration-300 min-w-[140px]"
+          >
+            View Projects
+          </a>
+        </div>
+      </Reveal>
+
+    </div>
+  </main>
+</Layout>

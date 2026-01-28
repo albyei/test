@@ -1,0 +1,46 @@
+---
+import { Reveal, RevealHorizontal } from './ui/Reveal';
+import Section from './Section.astro';
+
+const skills = {
+  Backend: ["Node.js", "Go", "REST API", "Express.js", "System Design"],
+  Frontend: ["React", "HTML5", "CSS3", "Tailwind CSS", "Astro"],
+  Database: ["MySQL", "PostgreSQL", "SQLite", "Redis", "Schema Design"],
+  Tools: ["Git", "Docker", "Linux CLI", "Postman", "CI/CD"]
+};
+---
+
+<Section id="skills">
+  <div class="space-y-12">
+    <div class="space-y-2">
+        <Reveal client:load>
+            <h2 class="text-2xl font-bold tracking-tight text-text-primary">Technical Arsenal</h2>
+        </Reveal>
+        <div class="h-0.5 w-16">
+            <RevealHorizontal client:load>
+                <div class="h-full w-full bg-accent"></div>
+            </RevealHorizontal>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {Object.entries(skills).map(([category, items], categoryIndex) => (
+        <Reveal client:load delay={categoryIndex * 0.1}>
+            <div class="space-y-6">
+                <h3 class="font-mono text-sm font-bold uppercase tracking-wider text-accent-soft">
+                    {category}
+                </h3>
+                <ul class="space-y-3">
+                    {items.map((skill) => (
+                    <li class="group flex items-center gap-3 text-text-muted hover:text-text-primary transition-colors cursor-default">
+                        <span class="w-1.5 h-1.5 bg-border-subtle group-hover:bg-accent rounded-full transition-colors" />
+                        <span class="text-sm border-b border-transparent group-hover:border-border-subtle transition-all">{skill}</span>
+                    </li>
+                    ))}
+                </ul>
+            </div>
+        </Reveal>
+      ))}
+    </div>
+  </div>
+</Section>

@@ -1,0 +1,70 @@
+---
+import { Reveal, RevealHorizontal } from './ui/Reveal';
+import Section from './Section.astro';
+---
+
+<Section id="blog">
+  <div class="space-y-12">
+    <div class="flex justify-between items-end">
+        <div class="space-y-2">
+            <Reveal client:load>
+                <h2 class="text-2xl font-bold tracking-tight text-text-primary">Engineering Log</h2>
+            </Reveal>
+            <div class="h-0.5 w-16">
+                <RevealHorizontal client:load>
+                    <div class="h-full w-full bg-accent"></div>
+                </RevealHorizontal>
+            </div>
+        </div>
+        <Reveal client:load delay={0.2}>
+            <a href="/blog" class="text-sm font-medium text-text-muted hover:text-accent transition-colors hidden md:block">View all posts -></a>
+        </Reveal>
+    </div>
+
+    <div class="space-y-8">
+      <Reveal client:load delay={0.1}>
+        <article class="group relative flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8 border-b border-border-subtle pb-8">
+            <time class="text-sm font-mono text-accent-soft shrink-0 w-32" datetime="2026-01-15">
+            Jan 15, 2026
+            </time>
+            <div class="space-y-2">
+                <h3 class="text-lg font-bold text-text-primary group-hover:text-accent transition-colors">
+                <a href="#">
+                    <span class="absolute inset-0"></span>
+                    Understanding Database Indexing Strategies
+                </a>
+                </h3>
+                <p class="text-sm text-text-muted leading-relaxed max-w-2xl">
+                A technical deep dive into B-Trees, Hash Indexes, and analyzing query execution plans to optimize database performance.
+                </p>
+                <div class="pt-2 text-xs font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                Read Article
+                </div>
+            </div>
+        </article>
+      </Reveal>
+      
+       <Reveal client:load delay={0.2}>
+        <article class="group relative flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8 border-b border-border-subtle pb-8">
+            <time class="text-sm font-mono text-accent-soft shrink-0 w-32" datetime="2025-12-20">
+            Dec 20, 2025
+            </time>
+            <div class="space-y-2">
+                <h3 class="text-lg font-bold text-text-primary group-hover:text-accent transition-colors">
+                <a href="#">
+                    <span class="absolute inset-0"></span>
+                    Why I Chose Go for Microservices
+                </a>
+                </h3>
+                <p class="text-sm text-text-muted leading-relaxed max-w-2xl">
+                Exploring the benefits of Golang's concurrency model (goroutines) and small memory footprint in modern backend architecture.
+                </p>
+                 <div class="pt-2 text-xs font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                Read Article
+                </div>
+            </div>
+        </article>
+      </Reveal>
+    </div>
+  </div>
+</Section>

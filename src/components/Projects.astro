@@ -1,0 +1,68 @@
+---
+import { Reveal, RevealHorizontal } from './ui/Reveal';
+import Section from './Section.astro';
+
+const projects = [
+  {
+    title: "E-Commerce API",
+    tech: ["Go", "PostgreSQL", "Docker"],
+    description: "High-performance REST API handling concurrent order processing and inventory management with strict ACID compliance.",
+    link: "#"
+  },
+  {
+    title: "Real-time Chat",
+    tech: ["Node.js", "Socket.io", "Redis"],
+    description: "Scalable messaging infrastructure supporting room management, persistence, and low-latency delivery.",
+    link: "#"
+  },
+   {
+    title: "Portfolio V2",
+    tech: ["Astro", "React", "Tailwind"],
+    description: "A minimalist, performance-focused personal website designed with strict aesthetic principles.",
+    link: "#"
+  }
+];
+---
+
+<Section id="projects">
+  <div class="space-y-12">
+    <div class="space-y-2">
+        <Reveal client:load>
+            <h2 class="text-2xl font-bold tracking-tight text-text-primary">Selected Projects</h2>
+        </Reveal>
+        <div class="h-0.5 w-16">
+            <RevealHorizontal client:load>
+                <div class="h-full w-full bg-accent"></div>
+            </RevealHorizontal>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project, index) => (
+        <Reveal client:load delay={index * 0.1}>
+            <a href={project.link} class="group block h-full p-8 bg-card-bg border border-border-subtle rounded hover:border-accent/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="flex flex-col h-full justify-between space-y-8">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-lg font-bold text-text-primary group-hover:text-accent transition-colors">{project.title}</h3>
+                        <span class="text-border-subtle group-hover:text-accent transition-colors">↗</span>
+                    </div>
+                    <p class="text-sm text-text-muted leading-relaxed">
+                        {project.description}
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                {project.tech.map((t) => (
+                    <span class="text-xs font-mono text-accent-soft">
+                    #{t}
+                    </span>
+                ))}
+                </div>
+            </div>
+            </a>
+        </Reveal>
+      ))}
+    </div>
+  </div>
+</Section>
